@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"go-mall/common/logger"
 	"go-mall/config"
 	"net/http"
 )
@@ -24,6 +25,8 @@ func main() {
 	r.GET("/config-read", func(c *gin.Context) {
 		// 从配置文件中读取数据库配置
 		database := config.Database
+		// 测试Zap 初始化的临时代码, 下节课会删掉
+		logger.ZapLoggerTest(c)
 		// 返回数据库配置信息
 		c.JSON(http.StatusOK, gin.H{
 			"type":     database.Type,

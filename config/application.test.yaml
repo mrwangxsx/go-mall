@@ -1,6 +1,10 @@
 app:
-  env: dev
+  env: test
   name: go-mall
+  log:
+    path: go-mall.log
+    max_size: 100
+    max_age: 60
 database:
   type: mysql
   dsn: "reserved"
